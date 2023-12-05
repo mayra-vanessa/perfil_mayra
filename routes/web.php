@@ -18,7 +18,7 @@ Route::get('/', function () {
 })->name('inicio');
 
 
-Route::post('/logout', [UsuariosController::class, 'logout'])->middleware('auth')->name('logout');
+Route::post('/logout', [UsuariosController::class, 'logout'])->name('logout');
 
 Route::get('/registro', [UsuariosController::class, 'showRegistroForm'])->name('registro');
 Route::post('/registro', [UsuariosController::class, 'registro'])->name('registro.submit');
@@ -26,5 +26,6 @@ Route::post('/registro', [UsuariosController::class, 'registro'])->name('registr
 Route::get('/login', [UsuariosController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [UsuariosController::class, 'login'])->name('login.submit');
 
-Route::get('/perfil', [UsuariosController::class, 'showPerfil'])->middleware('auth')->name('perfil');
-Route::post('/perfil', [UsuariosController::class, 'updatePerfil'])->middleware('auth')->name('perfil.actualizar');
+
+Route::get('/perfil', [UsuariosController::class, 'showPerfil'])->name('perfil');
+Route::post('/perfil', [UsuariosController::class, 'updatePerfil'])->name('perfil.actualizar');
